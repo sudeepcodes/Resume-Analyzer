@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Resume Analyzer</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Resume Analyzer</h1>
+
+    <!-- Upload Resume Section -->
+    <div class="upload-section">
+        <label for="resume-upload">Upload your resume (PDF):</label>
+        <input accept=".pdf" id="resume-upload" type="file">
+    </div>
+
+    <!-- Job Description Section -->
+    <div class="job-description-section">
+        <label for="job-description">Enter Job Description (optional):</label>
+        <textarea id="job-description" placeholder="Paste the job description here..."></textarea>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button id="ats-btn">Get ATS Score</button>
+        <button id="structure-btn">Get Resume Structure Review</button>
+        <button id="job-match-btn">Get Job Match Analysis</button>
+    </div>
+
+    <!-- Result Sections -->
+    <div class="result-section hidden" id="ats-result">
+        <h2>ATS Score</h2>
+        <p>Overall Score: <span id="ats-overall"></span></p>
+        <p>Keywords: <span id="ats-keywords"></span></p>
+        <p>Missing Keywords: <span id="ats-missing-keywords"></span></p>
+        <p>Format Score: <span id="ats-format"></span></p>
+    </div>
+
+    <div class="result-section hidden" id="structure-result">
+        <h2>Resume Structure Review</h2>
+        <p>Completeness: <span id="structure-completeness"></span></p>
+        <p>Sections Present: <span id="structure-sections-present"></span></p>
+        <p>Sections Missing: <span id="structure-sections-missing"></span></p>
+        <p>Suggestions: <span id="structure-suggestions"></span></p>
+        <p>Readability: <span id="structure-readability"></span></p>
+    </div>
+
+    <div class="result-section hidden" id="job-match-result">
+        <h2>Job Match Analysis</h2>
+        <p>Match Score: <span id="job-match-score"></span></p>
+        <p>Matching Skills: <span id="job-match-skills"></span></p>
+        <p>Missing Skills: <span id="job-match-missing-skills"></span></p>
+        <p>Recommendations: <span id="job-match-recommendations"></span></p>
+        <p>Relevance: <span id="job-match-relevance"></span></p>
+    </div>
+</div>
+
+<!-- Loader (hidden initially) -->
+<div class="loader hidden" id="loader">
+    <div class="spinner"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
